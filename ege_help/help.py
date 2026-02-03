@@ -289,3 +289,48 @@ def zadanie_27():
 • остатки по модулю
 • хранить лучшие варианты
 """)
+
+
+TASK_FUNCTIONS = {
+    1: zadanie_1,
+    2: zadanie_2,
+    3: zadanie_3,
+    4: zadanie_4,
+    5: zadanie_5,
+    6: zadanie_6,
+    7: zadanie_7,
+    8: zadanie_8,
+    9: zadanie_9,
+    10: zadanie_10,
+    11: zadanie_11,
+    12: zadanie_12,
+    13: zadanie_13,
+    14: zadanie_14,
+    15: zadanie_15,
+    16: zadanie_16,
+    17: zadanie_17,
+    18: zadanie_18,
+    19: zadanie_19,
+    20: zadanie_20,
+    21: zadanie_21,
+    22: zadanie_22,
+    23: zadanie_23,
+    24: zadanie_24,
+    25: zadanie_25,
+    26: zadanie_26,
+    27: zadanie_27,
+}
+
+
+def list_tasks():
+    return sorted(TASK_FUNCTIONS)
+
+
+def get_task(number):
+    if number not in TASK_FUNCTIONS:
+        raise ValueError(f"Неизвестное задание: {number}")
+    return TASK_FUNCTIONS[number]
+
+
+def print_task(number):
+    get_task(number)()
