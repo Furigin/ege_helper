@@ -324,32 +324,10 @@ TASK_FUNCTIONS = {
 }
 
 
-def list_tasks() -> list[int]:
-    """Вернуть список доступных номеров заданий (1..27)."""
-
-    return sorted(TASK_FUNCTIONS)
-
-
-def get_task(number: int) -> Callable[[], None]:
-    """Вернуть функцию `zadanie_N` по номеру.
-
-    Parameters
-    ----------
-    number:
-        Номер задания ЕГЭ.
-
-    Raises
-    ------
-    ValueError
-        Если передан неизвестный номер задания.
-    """
 
     if number not in TASK_FUNCTIONS:
         raise ValueError(f"Неизвестное задание: {number}")
     return TASK_FUNCTIONS[number]
 
-
-def print_task(number: int) -> None:
-    """Вывести шпаргалку для задания по номеру."""
 
     get_task(number)()

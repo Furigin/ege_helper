@@ -6,5 +6,5 @@ setup(
     packages=find_packages(),
     python_requires=">=3.8",
     entry_points={"console_scripts": ["ege-help=ege_help.__main__:main"]},
-    package_data={"ege_help": ["py.typed"]},
+
 )
