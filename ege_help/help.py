@@ -2,6 +2,8 @@
 # ШПАРГАЛКА ЕГЭ ИНФОРМАТИКА (Python)
 # ================================
 
+from typing import Callable
+
 def zadanie_1():
     print("""
 ЗАДАНИЕ 1 — СИСТЕМЫ СЧИСЛЕНИЯ
@@ -322,15 +324,10 @@ TASK_FUNCTIONS = {
 }
 
 
-def list_tasks():
-    return sorted(TASK_FUNCTIONS)
 
-
-def get_task(number):
     if number not in TASK_FUNCTIONS:
         raise ValueError(f"Неизвестное задание: {number}")
     return TASK_FUNCTIONS[number]
 
 
-def print_task(number):
     get_task(number)()
